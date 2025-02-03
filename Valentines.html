@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Fun and Romantic Journey</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #fff0f5;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            cursor: url('MELMEL/heart-love.gif'), auto; /* Silly cursor animation */
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #ff6f91;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 56px;
+            margin: 0;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/floating-hearts.gif') repeat;
+            opacity: 0.3;
+            animation: float 10s linear infinite;
+        }
+        @keyframes float {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 -500px; }
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px;
+        }
+        .gallery img {
+            margin: 15px;
+            border: 8px dotted #ffadc6;
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255,173,198,0.5);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: rotate(360deg);
+        }
+
+        /* Fun Facts Styles */
+        .fun-facts {
+            background-color: #ffe4e1;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .fun-facts h2 {
+            font-size: 36px;
+            color: #c2185b;
+            margin-bottom: 30px;
+        }
+        .fun-facts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .fun-facts li {
+            font-size: 22px;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        /* Meme Generator Styles */
+        .meme-generator {
+            text-align: center;
+            margin: 50px;
+        }
+        .meme-generator h2 {
+            font-size: 36px;
+            color: #c2185b;
+            margin-bottom: 20px;
+        }
+        .meme-generator canvas {
+            border: 2px solid #ffadc6;
+            margin-bottom: 20px;
+        }
+        .meme-generator input, .meme-generator button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        /* Photo Booth Styles */
+        .photo-booth {
+            text-align: center;
+            margin: 50px;
+        }
+        .photo-booth h2 {
+            font-size: 36px;
+            color: #c2185b;
+            margin-bottom: 20px;
+        }
+        .photo-booth video, .photo-booth canvas {
+            border: 2px solid #ffadc6;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .photo-booth button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff6f91;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .photo-booth button:hover {
+            background-color: #c2185b;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #ff6f91;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+        footer p {
+            margin: 0;
+            font-size: 20px;
+        }
+        footer .dancing {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 80px;
+        }
+
+        /* Easter Egg Styles */
+        #easter-egg {
+            display: none;
+            text-align: center;
+            margin: 50px;
+        }
+        #easter-egg img {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        #easter-egg p {
+            font-size: 24px;
+            color: #c2185b;
+        }
+
+        /* Heart Trail Cursor Effect Styles */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('MELMEL/pngegg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            animation: fadeOut 1s forwards;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="Music/My Favourite Song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Hidden Easter Egg -->
+    <div id="easter-egg">
+        <img src="MELMEL/Surprise.jpeg" alt="Surprise!" />
+        <p>You found the hidden message! You're egg-stra special! 🥚</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="hearts"></div>
+        <h1>Happy Valentine's Day, Mely!</h1>
+    </header>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <img src="MELMEL/Fabs.jpeg" alt="Us being fabulous">
+        <img src="MELMEL/Awkward.jpg" alt="That awkward selfie">
+        <img src="MELMEL/cat-wave.gif" alt="Our spirit animal">
+        <img src="MELMEL/AWESOME.jpg" alt="Caught in the act of being awesome">
+        <img src="MELMEL/catjam-cat.gif" alt="How you dance (just kidding!)">
+    </section>
+
+    <!-- Fun Facts -->
+    <section class="fun-facts">
+        <h2>Did You Know?</h2>
+        <ul>
+            <li>We’ve had 10 pizza dates (and counting!). 🍕</li>
+            <li>You can’t resist singing loudly in the car, even if the lyrics are wrong. 🎶</li>
+            <li>Our record for the longest laughter fit is 5 minutes straight. 😂</li>
+        </ul>
+    </section>
+
+    <!-- Meme Generator -->
+    <section class="meme-generator">
+        <h2>Create a Meme!</h2>
+        <canvas id="meme-canvas" width="500" height="500"></canvas>
+        <br>
+        <input type="file" id="meme-image-input">
+        <br>
+        <input type="text" id="top-text" placeholder="Top Text">
+        <input type="text" id="bottom-text" placeholder="Bottom Text">
+        <br>
+        <button onclick="generateMeme()">Generate Meme</button>
+    </section>
+
+    <!-- Silly Photo Booth -->
+    <section class="photo-booth">
+        <h2>Silly Photo Booth</h2>
+        <video id="video" width="500" height="375" autoplay></video>
+        <br>
+        <button id="snap">Snap Photo</button>
+        <br>
+        <canvas id="canvas" width="500" height="375"></canvas>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Love you more than tacos! 🌮<br>Alex</p>
+        <img src="MELMEL/panda-dancing.gif" alt="Happy dance" class="dancing">
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        /* Hidden Easter Egg */
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'KeyE') {
+                document.getElementById('easter-egg').style.display = 'block';
+            }
+        });
+
+        /* Meme Generator */
+        const canvas = document.getElementById('meme-canvas');
+        const ctx = canvas.getContext('2d');
+        const imageInput = document.getElementById('meme-image-input');
+        let memeImage;
+
+        imageInput.addEventListener('change', function() {
+            const reader = new FileReader();
+            reader.onload = function() {
+                memeImage = new Image();
+                memeImage.src = reader.result;
+                memeImage.onload = function() {
+                    ctx.drawImage(memeImage, 0, 0, canvas.width, canvas.height);
+                };
+            };
+            reader.readAsDataURL(this.files[0]);
+        });
+
+        function generateMeme() {
+            const topText = document.getElementById('top-text').value;
+            const bottomText = document.getElementById('bottom-text').value;
+            ctx.drawImage(memeImage, 0, 0, canvas.width, canvas.height);
+            ctx.font = '40px Impact';
+            ctx.fillStyle = 'white';
+            ctx.strokeStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.lineWidth = 2;
+
+            // Top text
+            ctx.fillText(topText.toUpperCase(), canvas.width / 2, 50);
+            ctx.strokeText(topText.toUpperCase(), canvas.width / 2, 50);
+
+            // Bottom text
+            ctx.fillText(bottomText.toUpperCase(), canvas.width / 2, canvas.height - 20);
+            ctx.strokeText(bottomText.toUpperCase(), canvas.width / 2, canvas.height - 20);
+        }
+
+        /* Silly Photo Booth */
+        const video = document.getElementById('video');
+        const photoCanvas = document.getElementById('canvas');
+        const photoCtx = photoCanvas.getContext('2d');
+        const snap = document.getElementById('snap');
+
+        // Get access to the camera
+        if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                video.srcObject = stream;
+                video.play();
+            });
+        }
+
+        // Trigger photo take
+        snap.addEventListener('click', function() {
+            photoCtx.drawImage(video, 0, 0, photoCanvas.width, photoCanvas.height);
+        });
+
+        /* Background Music Controls */
+        const music = document.getElementById('background-music');
+        function playMusic() {
+            music.play();
+        }
+        function pauseMusic() {
+            music.pause();
+        }
+
+        /* Heart Trail Cursor Effect */
+        document.addEventListener('mousemove', function(e) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        });
+    </script>
+</body>
+</html>
